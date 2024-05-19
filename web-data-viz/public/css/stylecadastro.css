@@ -13,7 +13,7 @@
     list-style: none;
 }
 body {
-    background: rgb(17, 17, 17);
+    background: #000;
 
     display: flex;
     flex-direction: column;

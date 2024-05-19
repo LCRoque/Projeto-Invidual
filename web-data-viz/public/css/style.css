@@ -273,6 +273,7 @@ input:checked + label .description {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    height: 50%;
 }
 
 .card4 {
@@ -303,6 +304,30 @@ input:checked + label .description {
     margin-bottom: 12px;
     overflow: hidden;
     background-image: url("imagens/boladeouro.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cardimagem2 {
+    width: 100%;
+    height: 64%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background-image: url("imagens/chuteiradeouro.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cardimagem3 {
+    width: 100%;
+    height: 64%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background-image: url("imagens/.png");
     display: flex;
     align-items: center;
     justify-content: center;
