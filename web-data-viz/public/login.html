@@ -52,7 +52,7 @@
             </div>
         </div>
  <div class="container7">
-        <form class="form">
+        <div class="form">
             <img src="css/imagens/logosemfundoteste.png" alt="">
             <p>
                 Login<span>Realize seu Login!</span>
@@ -60,8 +60,8 @@
 
             <input type="email" id="email_input" placeholder="Email">
             <input type="password"  id="senha_input" placeholder="Senha">
-            <button class="oauthButton">Logar</button>
-        </form>
+            <button class="oauthButton" onclick="entrar()">Logar</button>
+        </div>
             </div>
         </div>
     </div>
@@ -71,10 +71,7 @@
 </html>
 
 <script>
-
-
     function entrar() {
-        aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -115,7 +112,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "index.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

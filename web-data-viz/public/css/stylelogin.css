@@ -13,8 +13,7 @@
     list-style: none;
 }
 body {
-    background: rgb(17, 17, 17);
-
+    background: linear-gradient(to bottom, #000, #ffffff75);
     display: flex;
     flex-direction: column;
 }

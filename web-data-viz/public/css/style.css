@@ -13,7 +13,7 @@
     list-style: none;
 }
 body {
-    background: rgb(255, 255, 255);
+    background: #fff;
     display: flex;
     flex-direction: column;
 }
@@ -89,10 +89,10 @@ nav ul li a.ativo {
 
 .container .corpo{
     display: flex;
-    background-image: url("imagens/teste.jpg");
+    background-image: url("imagens/cristianoronaldofundo.png");
     background-attachment: fixed;
-     background-repeat: no-repeat; 
-     background-size: cover; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
     width: 100%;
     height: 100%;
     color: #fff;
@@ -102,6 +102,16 @@ nav ul li a.ativo {
     padding: 70px;
     text-align: center;
 }
+.corpo img {
+    z-index: 100;
+}
+.opacidade{
+    width: 100%;
+    height: 100%;
+    background: #000000cc;
+    position: absolute;
+}
+
 .corpo img{
     margin-top: 20px;
     width: 45%;
