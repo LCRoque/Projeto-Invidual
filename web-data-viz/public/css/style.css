@@ -327,7 +327,7 @@ input:checked + label .description {
     border-radius: 10px;
     margin-bottom: 12px;
     overflow: hidden;
-    background-image: url("imagens/.png");
+    background-image: url("imagens/fifathebest.png");
     display: flex;
     align-items: center;
     justify-content: center;
