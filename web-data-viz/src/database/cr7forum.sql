@@ -8,4 +8,13 @@ create table usuario (
     senha varchar(45)
 );
 
+create table noticias (
+	id int primary key auto_increment,
+    titulo varchar(45),
+    descricao varchar(250),
+    fk_usuario int,
+    foreign key (fk_usuario) references usuario(id)
+);
+
 select * from usuario;	
+select * from noticias;
