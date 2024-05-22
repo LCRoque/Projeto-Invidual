@@ -16,5 +16,7 @@ create table noticias (
     foreign key (fk_usuario) references usuario(id)
 );
 
+select * from noticias;
+
 select * from usuario;	
 select * from noticias;

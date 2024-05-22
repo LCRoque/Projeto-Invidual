@@ -83,9 +83,10 @@
     }
 
     function publicar() {
-      console.log("ID do Usuário: ", idUsuario);
 
         var idUsuario = sessionStorage.ID_USUARIO;
+
+        console.log("ID do Usuário: ", idUsuario);
 
         var corpo = {
             titulo: form_postagem.titulo.value,
@@ -93,7 +94,7 @@
         }
 
         fetch(`/avisos/publicar/${idUsuario}`, {
-            method: "post",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
