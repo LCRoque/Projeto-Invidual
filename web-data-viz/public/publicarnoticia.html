@@ -106,6 +106,19 @@
             if (resposta.ok) {
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
                 window.location = "publicarnoticia.html";
+               
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.DESCRICAO_NOTICIA= json.descricao;
+                    sessionStorage.TITULO_NOTICIA = json.titulo;
+                    sessionStorage.ID_NOTICIA = json.id;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    console.log(resposta);
+
+                });
                 limparFormulario();
                 finalizarAguardar();
             } else if (resposta.status == 404) {
