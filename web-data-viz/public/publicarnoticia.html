@@ -90,7 +90,8 @@
 
         var corpo = {
             titulo: form_postagem.titulo.value,
-            descricao: form_postagem.descricao.value
+            descricao: form_postagem.descricao.value,
+            imagem: form_postagem.imagem.value
         }
 
         fetch(`/avisos/publicar/${idUsuario}`, {
@@ -113,7 +114,8 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.DESCRICAO_NOTICIA= json.descricao;
                     sessionStorage.TITULO_NOTICIA = json.titulo;
-                    sessionStorage.ID_NOTICIA = json.id;
+                    sessionStorage.IMAGEM_NOTICIA = jsom.imagem;
+                    sessionStorage.ID_AVISO = json.id;
                     sessionStorage.ID_USUARIO = json.idUsuario;
 
                     console.log(resposta);

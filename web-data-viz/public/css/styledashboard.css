@@ -196,6 +196,10 @@ button:hover {
 
 }
 
+section{
+  overflow: auto;
+}
+
 @media screen and (max-width: 400px){
   .sidebar{
     width: 240px;
