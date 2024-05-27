@@ -88,6 +88,9 @@
 
         console.log("ID do Usuário: ", idUsuario);
 
+        const formData = new FormData();
+        formData.append('imagem', imagem.files[0])  
+
         var corpo = {
             titulo: form_postagem.titulo.value,
             descricao: form_postagem.descricao.value,
