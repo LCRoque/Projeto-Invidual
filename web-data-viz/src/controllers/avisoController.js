@@ -63,7 +63,7 @@ function pesquisarDescricao(req, res) {
 function publicar(req, res) {
     var titulo = req.body.titulo;
     var descricao = req.body.descricao;
-    var imagem = req.file.filename;
+    var imagem = req.body.imagem;
     var idUsuario = req.params.idUsuario;
 
     if (titulo == undefined) {

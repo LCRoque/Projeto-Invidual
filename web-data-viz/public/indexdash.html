@@ -93,7 +93,7 @@
 
 
                         // spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b><br>";
-                        divImagem.innerHTML = publicacao.imagem;
+                        divImagem.innerHTML = `<img src=${publicacao.imagem.replaceAll('\\', '/')}>`;
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
@@ -118,7 +118,7 @@
                         // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
                         divPublicacao.appendChild(spanID);
-                        divImagem.appendChild(divImagem);
+                        divPublicacao.appendChild(divImagem);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
