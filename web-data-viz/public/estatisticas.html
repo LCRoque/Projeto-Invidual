@@ -16,7 +16,7 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="#">
+            <a href="indexdash.html">
                 <i class='bx bx-grid-alt'></i>
                 <span class="link_name">Notícias</span>
             </a>
@@ -51,7 +51,7 @@
 <section class="home">
     <div class="home-content">
         <i class='bx bx-menu'></i>
-        <span class="text">Estátisticas da Comunidade</span>
+        <span class="text">Acompanhe nossa comunidade!</span>
     </div>
     <div id="graficos"></div>
     <div id="graficos2"></div>
@@ -68,14 +68,15 @@ function exibirUsuarios() {
     document.getElementById("graficos").innerHTML = `
         <div id="grafico">
             <h3 class="tituloGraficos">
-                <span id="tituloGrafico">Nossa Comunidade</span>
+                <span id="tituloGrafico"></span>
             </h3>
             <div class="graph">
                 <canvas id="myChartCanvas"></canvas>
+                <div class="label-captura">
+                <p id="avisoCaptura" style="color: black">Acompanhe Simultâneamente nosso Fórum crescendo!</p>
             </div>
-            <div class="label-captura">
-                <p id="avisoCaptura" style="color: white">Teste</p>
             </div>
+            
         </div>
     `;
 
@@ -83,9 +84,9 @@ function exibirUsuarios() {
         <div id="grafico2">
             <div class="graph2">
                 <canvas id="myChartCanvas2"></canvas>
+                <div class="label-captura2">
+                <p id="avisoCaptura" style="color: black">Acompanhe a quantidade de publicações do nosso Fórum!</p>
             </div>
-            <div class="label-captura2">
-                <p id="avisoCaptura" style="color: white">Teste</p>
             </div>
         </div>
     `;
@@ -130,12 +131,12 @@ function obterDadosGrafico() {
 function plotarGrafico(resposta) {
     console.log('Iniciando plotagem do gráfico...');
 
-    let labels = ["Usuários"];
+    let labels = ["Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
     let dados = {
         labels: labels,
         datasets: [{
-            label: 'Usuários no Fórum',
+            label: 'Total de Pessoas no Fórum',
             data: [resposta[0].quantidade_usuarios],
             backgroundColor: 'rgb(0, 0, 0)',
             borderColor: 'rgb(0, 0, 0)',
@@ -160,7 +161,7 @@ function plotarGrafico(resposta) {
 }
   
 function plotarGrafico2(resposta) {
-    let labels2 = ["Notícias"];
+    let labels2 = ["Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
     let dados2 = {
         labels: labels2,
