@@ -32,13 +32,13 @@
       <li>
         <a href="#">
           <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Top Postadores</span>
+          <span class="link_name">Estatísticas Fórum</span>
         </a>
       </li>
 
       <li>
         <a href="cruzadinha.html">
-          <i class='bx bx-line-chart' ></i>
+          <i class='bx bxs-notepad' ></i>
           <span class="link_name">Cruzadinha</span>
         </a>
       </li>
@@ -70,19 +70,24 @@
                 <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
             </label>
             <br>
-            <label>
-                Imagem:
-                <br>
-                <input type="file" name="imagem" id="imagem">
+            <label for="fileInput" class="custom-file-upload">
+              <img src="https://static.thenounproject.com/png/187803-200.png" alt="Escolher Ficheiro">
             </label>
+            <input type="file" id="fileInput" />
             <br>
-            <button type="submit" class="oauthButton">Enviar</button>
+            <button type="submit">Postar</button>
         </form>
     </div>
 
   </section>
 
   <script src="js/scriptmenudash.js"></script>
+  
+  <script>
+    document.querySelector('.custom-file-upload').addEventListener('click', function() {
+        document.querySelector('#fileInput').click();
+    });
+</script> 
 
   <script>
         function limparFormulario() {
