@@ -200,6 +200,22 @@ section{
   overflow: auto;
 }
 
+#graficos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+#grafico {
+  width: 50%;
+  height: 50%;
+  display: block;
+}
+.graph {
+ width: 100%;
+ height: 100%;
+}
+
 @media screen and (max-width: 400px){
   .sidebar{
     width: 240px;
