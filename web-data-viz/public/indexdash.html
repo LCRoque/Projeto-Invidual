@@ -82,6 +82,7 @@
 
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    console.log("Imagem é: " + resposta[0].imagem)
 
                     var feed = document.getElementById("feed_container");
                     feed.innerHTML = "";
@@ -99,8 +100,9 @@
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
-                        const imageUrl = publicacao.imagem.replaceAll('\\', '/');
+                        const imageUrl = publicacao.imagem;
                         console.log('Imagem URL após substituição:', imageUrl);
+                        console.log(publicacao.imagem);
                         
                         divImagem.innerHTML = `<img src="${imageUrl}">`;
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
