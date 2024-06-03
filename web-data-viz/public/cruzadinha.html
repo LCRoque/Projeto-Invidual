@@ -16,156 +16,42 @@
     <title>CR7 | Cruzadinha</title>
     <style>
     * {
-margin: 0;
-padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-background-color: #ffffff;
-font-family: "Poppins", sans-serif;
-font-weight: 500;
-
-}
-header h1{
-text-align: center;
-font-size: 30px;
+main {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-
-table {
-    border: 1px #000000 solid;
-    font-size:25px; 
-    margin-left: 130px;
-    margin: auto;
-    
+h1 {
+  text-align: center;
 }
 
-
-tr {
-    border: 1px #000000 solid;
-    
+hr {
+  font-weight: bold;
+  height: 3px;
+  background: black;
 }
 
-td {
-    border: 1px #000000 solid;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    vertical-align: center;
+.game {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 30px;
 }
 
-button{
-    border: 0px;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 20px;
-}
-
-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container{
-    width: 1100px;
-    margin: auto;
-}
-
-#div_game{
-    display: flex;
-    background-color: #ffffff;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-}
-
-#div_questions{
-background-color:#ffffff;
-color: #000000;
-width: 700px;
-margin: auto;
-}
-
-.button{
-    margin: auto;
-    display: inline-block;
-}
-
-#button_verify{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90px;
-    height: 50px;
-    margin: auto;
-    color: #ffffff;
-    background-color: rgb(0, 0, 0);
-}
-#input_answer{
-    border: #000000 2px solid;
-    border-radius: 20px;
-    background-color: #fff;
-    width: 30%;
-    height: 30px;
-    margin: auto;
-}
-
-.deadCell{
-    background-color: #000000;
-}
-.availableCell{
-    background-color: #ffffff;
-}
-
-footer{
-    height: 100%;
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 15px; 
-    margin-bottom: 0;
-    padding: 0;
-    bottom: 0;
-}
-footer p{
-    text-align: center;
-
-}
-#div_information{
-    width: 500px;
-    margin: auto;
-    background-color: #000000;
-    font-size: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    color: #fff;
-    box-shadow: 0 0 0 10px 20px #000000;
-}
-
-
-.container #div_verifiedAnswer{
-    display: flex;
-    width: 500px;
-    height: 70px;
-    margin: auto;
-    text-align: center;
-    font-size: 20px;
-    vertical-align:center;
-    margin-bottom: 20px;
-}
-.correctAnswer{
-    background-color: #58D68D;
-    color: #196F3D;
-    border:1px #196F3D solid;
-}
-.wrongAnswer{
-    background-color: #EC7063  ;
-    color: #7B241C;
-    border:1px #7B241C solid;
-
+.game button {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 50px;
+  background: #000000;
 }
     </style>
 </head>
@@ -199,7 +85,7 @@ footer p{
             <li>
                 <a href="#">
                     <i class='bx bxs-notepad'></i>
-                    <span class="link_name">Cruzadinha</span>
+                    <span class="link_name">Jogo da Velha</span>
                 </a>
             </li>
             <li>
@@ -209,495 +95,98 @@ footer p{
             </li>
         </ul>
     </div>
-
-    <section class="home">
+</div>
+<section class="home">
         <div class="home-content">
             <i class='bx bx-menu'></i>
             <span class="text">Entretenimento</span>
-</div>
-    <header>
-        <div class="container">
-            <h1>Palavras-Cruzadas</h1><br>
-            <div class="div_button">
-                <center>
-                    <button class="button" id="bt_start" onclick="start()">Começar o Jogo</button>
-                    <button class="button" style="display: none" id="bt_destroyGame" onclick="destroyGrid()">Encerrar o
-                        Jogo</button>
-                </center>
             </div>
-            <br>
-        </div>
-    </header>
-    <article>
-        <div class="container">
-            <div style="display: none;" id="div_verifiedAnswer">
-                <h3>Resposta Correta</h3>
-            </div>
-            <div id="div_game">
-                <br>
-                <div id="div_information">
-                    <h2>Intruções do Jogo</h2><br>
-                    <p>
-                        Clique em "Começar o Jogo" para iniciar uma partida <br><br>
-                        Perguntas serão exibidas na parte inferior do quadro <br><br>
-                        Insira a sua resposta na caixa de texto e clique em "Verificar" para conferir a sua
-                        resposta<br>
-                        A partida acaba quando as 16 questões forem respondidas <br><br>
-                    </p>
+            <main>
+                <h1>JOGO DA VELHA</h1>
+                <hr />
+                <div class="game">
+                  <button data-i="1"></button>
+                  <button data-i="2"></button>
+                  <button data-i="3"></button>
+                  <button data-i="4"></button>
+                  <button data-i="5"></button>
+                  <button data-i="6"></button>
+                  <button data-i="7"></button>
+                  <button data-i="8"></button>
+                  <button data-i="9"></button>
                 </div>
-                <br>
-                <br>
-                <div style="display: none" id="div_questions">
-                    <center>
-                        <span id="span_questionText">Vamos encontrar as esferas do dragao</span>
-                        <input type="text" id="input_answer" placeholder="Sua Reposta"><br>
-                        <button id="button_verify" onclick="verify()" class="button">Verificar</button>
-                    </center>
+                <h2 class="currentPlayer"></h2>
+              </main>        
+             
 
+<script>
 
-                </div>
-            </div>
-        </div>
-        <div id="div_canvasCruzada" style="width: 50%; display: flex; justify-content: center; align-items: center;">
-        </div>
-        </div>
-    </article><br><br>
-    </section>
-    <script src="js/scriptmenudash.js"></script>
-    <script>
-        
-    var special_words = ['CR7', 'SIU', 'Sporting CP', '451', '131', 'Ouros', '1224', 'Champions League', '128', '34', 'Man United', 'Eurocopa', '52', '59', 'Nations Lg', 'Quad Core'];
+const currentPlayer = document.querySelector(".currentPlayer");
 
-        var questions_list = [
-    'Qual a abreviação mundialmente conhecido Cristiano Ronaldo?',
+let selected;
+let player = "X";
 
-    'Qual é o grito de comemoração característico de Cristiano Ronaldo?',
-
-    'Em qual clube Cristiano Ronaldo começou sua carreira profissional?',
-
-    'Quantos gols marcou Cristiano Ronaldo pelo Real Madrid?',
-
-    'Quantos gols marcou Cristiano Ronaldo na Champions League',
-
-    'Complete o nome do principal prêmio de Cristiano Ronaldo. Bolas de...',
-
-    'Qual o total de partidas de Cristiano Ronaldo?',
-
-    'Qual competição Crisitano Ronaldo mais venceu?',
-
-    'Quantos Gols tem Cristiano Ronaldo pela Seleção de Portugal?',
-
-    'Quantos títulos Cristiano Ronaldo tem na carreira?',
-
-    'Qual o primeiro time de Cristiano Ronaldo na Inglaterra? Man...',
-
-    'Qual o primeiro título conquistado junto com a Seleção Portuguesa?',
-
-    'Qual o máximo de Gols na temporada de 2017/2018',
-    'Qual o máximo de Gols na temporada de 2012/2013',    
-    'Qual o segundo título conquistado pela Seleção de Portugal? League = Lg',
-    'Qual é o tipo de processador, seguindo o mesmo princípio do dual-core, possui quatro núcleos de execução, dobrando a capacidade de processamento?'
+let positions = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [1, 4, 7],
+  [2, 5, 8],
+  [3, 6, 9],
+  [1, 5, 9],
+  [3, 5, 7],
 ];
 
-var filledCell = [2, 20, 38, 133, 134, 135, 59, 77, 95, 113, 131, 149,
-    167, 185, 203, 221, 239, 257, 275, 59, 60, 61, 272, 290, 308, 236,
-    254, 272, 290, 308, 116, 134, 152, 170, 188, 27, 45, 63, 81, 99, 117,
-    135, 153, 171, 189, 207, 225, 243, 261, 279, 297, 203, 204, 205, 312,
-    313, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 187, 20, 223,
-    241, 259, 277, 295, 313, 117, 118, 113, 114, 37, 38, 39, 40, 41, 42,
-    43, 44, 45, 3, 21, 39, 57, 75, 93, 111, 129, 147];
+function init() {
+  selected = [];
 
-var firstIndex= [2, 133, 59, 59, 272, 236, 116, 27, 203, 312, 270, 187, 117, 113, 37, 3];
+  currentPlayer.innerHTML = `JOGADOR DA VEZ: ${player}`;
 
-var word = {
-
-    word1: {
-        letter: special_words[0].split(''),
-        position: [2, 20, 38],
-        write: function () {
-
-            for (i in word.word1.letter) {
-                var findCell = document.querySelector(`#cell_${word.word1.position[i]}`);
-
-                findCell.innerHTML = word.word1.letter[i];
-                console.log(word.word1.letter[i]);
-            }
-            cell_2.innerHTML = '<span style="color: red; font-size:10px">1</span>C';
-        }
-    },
-    word2: {
-        letter: special_words[1].split(''),
-        position: [133, 134, 135],
-        write: function () {
-            for (i in word.word2.letter) {
-                var findCell = document.querySelector(`#cell_${word.word2.position[i]}`);
-
-                findCell.innerHTML = word.word2.letter[i];
-                console.log(word.word2.letter[i]);
-            }
-            cell_133.innerHTML = '<span style="color: red; font-size:10px">2</span>U';
-
-        }
-    },
-    word3: {
-        letter: special_words[2].split(''),
-        position: [59, 77, 95, 113, 131, 149, 167, 185, 203, 221, 239, 257, 275],
-        write: function () {
-            for (i in word.word3.letter) {
-                var findCell = document.querySelector(`#cell_${word.word3.position[i]}`);
-
-                findCell.innerHTML = word.word3.letter[i];   
-                console.log(word.word3.letter[i]);
-            }
-            cell_59.innerHTML = '<span style="color: red; font-size:10px">3_4</span>R';
-            cell_113.innerHTML = '<span style="color: red; font-size:10px">14</span>i';
-        }
-    },
-    word4: {
-        letter: special_words[3].split(''),
-        position: [59, 60, 61],
-        write: function () {
-            for (i in word.word4.letter) {
-                var findCell = document.querySelector(`#cell_${word.word4.position[i]}`);
-
-                findCell.innerHTML = word.word4.letter[i];
-                console.log(word.word4.letter[i]);
-            }
-            cell_59.innerHTML = '<span style="color: red; font-size:10px">3_4</span>R';            
-        }
-    },
-    word5: {
-        letter: special_words[4].split(''),
-        position: [272, 290, 308],
-        write: function () {
-            for (i in word.word5.letter) {
-                var findCell = document.querySelector(`#cell_${word.word5.position[i]}`);
-
-                findCell.innerHTML = word.word5.letter[i];
-                console.log(word.word5.letter[i]);
-            }
-            cell_272.innerHTML = '<span style="color: red; font-size:10px">5</span>R';
-        }
-    },
-    word6: {
-        letter: special_words[5].split(''),
-        position: [236, 254, 272, 290, 308],
-        write: function () {
-            for (i in word.word6.letter) {
-                var findCell = document.querySelector(`#cell_${word.word6.position[i]}`);
-
-                findCell.innerHTML = word.word6.letter[i];
-                console.log(word.word6.letter[i]);
-            }
-            cell_236.innerHTML= '<span style="color: red; font-size:10px">6</span>E';
-        }
-    },
-    word7: {
-        letter: special_words[6].split(''),
-        position: [116, 134, 152, 170, 188],
-        write: function () {
-            for (i in word.word7.letter) {
-                var findCell = document.querySelector(`#cell_${word.word7.position[i]}`);
-
-                findCell.innerHTML = word.word7.letter[i];
-                console.log(word.word7.letter[i]);
-            }
-            cell_116.innerHTML = '<span style="color: red; font-size:10px">7</span>F';
-        }
-    },
-    word8: {
-        letter: special_words[7].split(''),
-        position: [27, 45, 63, 81, 99, 117, 135, 153, 171, 189, 207, 225, 243, 261, 279, 297],
-        write: function () {
-            for (i in word.word8.letter) {
-                var findCell = document.querySelector(`#cell_${word.word8.position[i]}`);
-
-                findCell.innerHTML = word.word8.letter[i];
-                console.log(word.word8.letter[i]);
-            }
-            cell_27.innerHTML = '<span style="color: red; font-size:10px">8</span>M';
-            cell_117.innerHTML = '<span style="color: red; font-size:10px">13</span>i';
-            cell_153.innerHTML = '-';
-            cell_207.innerHTML = '-';
-        
-        }
-    },
-    word9: {
-        letter: special_words[8].split(''),
-        position: [203, 204, 205, 312, 313],
-        write: function () {
-            for (i in word.word9.letter) {
-                var findCell = document.querySelector(`#cell_${word.word9.position[i]}`);
-
-                findCell.innerHTML = word.word9.letter[i];
-                console.log(word.word9.letter[i]);
-            }
-            cell_203.innerHTML = '<span style="color: red; font-size:10px">9</span>D';
-        }
-    },
-    word10: {
-        letter: special_words[9].split(''),
-        position: [312, 313],
-        write: function () {
-            for (i in word.word10.letter) {
-                var findCell = document.querySelector(`#cell_${word.word10.position[i]}`);
-
-                findCell.innerHTML = word.word10.letter[i];
-                console.log(word.word10.letter[i]);
-            }
-            cell_312.innerHTML = '<span style="color: red; font-size:10px">10</span>C';
-        }
-    },
-    word11: {
-        letter: special_words[10].split(''),
-        position: [270, 271, 272, 273, 274, 275, 276, 277, 278, 279],
-        write: function () {
-            for (i in word.word11.letter) {
-                var findCell = document.querySelector(`#cell_${word.word11.position[i]}`);
-
-                findCell.innerHTML = word.word11.letter[i];
-                console.log(word.word11.letter[i]);
-            }
-            cell_270.innerHTML = '<span style="color: red; font-size:10px">11</span>A';
-            cell_276.innerHTML = '-';
-        }
-    },
-    word12: {
-        letter: special_words[11].split(''),
-        position: [187, 205, 223, 241, 259, 277, 295, 313, 117, 118],
-        write: function () {
-            for (i in word.word12.letter) {
-                var findCell = document.querySelector(`#cell_${word.word12.position[i]}`);
-
-                findCell.innerHTML = word.word12.letter[i];
-                console.log(word.word12.letter[i]);
-            }
-            cell_187.innerHTML = '<span style="color: red; font-size:10px">12</span>D';
-            cell_259.innerHTML = '-';
-        }
-    },
-    word13: {
-        letter: special_words[12].split(''),
-        position: [117, 118],
-        write: function () {
-            for (i in word.word13.letter) {
-                var findCell = document.querySelector(`#cell_${word.word13.position[i]}`);
-
-                findCell.innerHTML = word.word13.letter[i];
-                console.log(word.word13.letter[i]);
-            }
-            cell_117.innerHTML = '<span style="color: red; font-size:10px">13</span>I';
-        }
-    },
-    word14: {
-        letter: special_words[13].split(''),
-        position: [113, 114],
-        write: function () {
-            for (i in word.word14.letter) {
-                var findCell = document.querySelector(`#cell_${word.word14.position[i]}`);
-
-                findCell.innerHTML = word.word14.letter[i];
-                console.log(word.word14.letter[i]);
-            }
-            cell_113.innerHTML = '<span style="color: red; font-size:10px">14</span>I';
-        }
-    },
-    word15: {
-        letter: special_words[14].split(''),
-        position: [37, 38, 39, 40, 41, 42, 43, 44, 45],
-        write: function () {
-            for (i in word.word15.letter) {
-                var findCell = document.querySelector(`#cell_${word.word15.position[i]}`);
-
-                findCell.innerHTML = word.word15.letter[i];
-                console.log(word.word15.letter[i]);
-            }
-            cell_37.innerHTML = '<span style="color: red; font-size:10px">15</span>D';
-            cell_41.innerHTML = '-';
-        }
-    },
-    word16: {
-        letter: special_words[15].split(''),
-        position: [3, 21, 39, 57, 75, 93, 111, 129, 147],
-        write: function () {
-            for (i in word.word16.letter) {
-                var findCell = document.querySelector(`#cell_${word.word16.position[i]}`);
-
-                findCell.innerHTML = word.word16.letter[i];
-                console.log(word.word16.letter[i]);
-            }
-            cell_3.innerHTML = '<span style="color: red; font-size:10px">16</span>Q';
-            cell_75.innerHTML = '-';
-        }
-    }
-};
-
-var widthTable = 18;
-var heightTable = 18;
-
-
-var cont_correctAnswer = 0;
-
-function start() {
-    cont_correctAnswer = 0;
-    bt_start.style.display = 'none';
-    bt_destroyGame.style.display = 'block';
-    div_questions.style.display = 'block';
-    div_information.style.display = 'none';
-    renderGrid();
-    gameSequence();
-
+  document.querySelectorAll(".game button").forEach((item) => {
+    item.innerHTML = "";
+    item.addEventListener("click", newMove);
+  });
 }
 
-function destroyGrid() {
-    bt_start.style.display = 'block';
-    bt_destroyGame.style.display = 'none';
-    div_questions.style.display = 'none';
+init();
 
-    document.querySelector('#div_canvasCruzada').innerHTML = '';
-    pontuation();
+function newMove(e) {
+  const index = e.target.getAttribute("data-i");
+  e.target.innerHTML = player;
+  e.target.removeEventListener("click", newMove);
+  selected[index] = player;
+
+  setTimeout(() => {
+    check();
+  }, [100]);
+
+  player = player === "X" ? "O" : "X";
+  currentPlayer.innerHTML = `JOGADOR DA VEZ: ${player}`;
 }
 
-function gameSequence() {
-    span_questionText.innerHTML = `<b>${cont_correctAnswer + 1}.</b> ${questions_list[cont_correctAnswer]}`;
+function check() {
+  let playerLastMove = player === "X" ? "O" : "X";
 
-    if (cont_correctAnswer == 1) {
-        word.word1.write();
-    }
-    else if (cont_correctAnswer == 2) {
-        word.word2.write();
-    }
-    else if (cont_correctAnswer == 3) {
-        word.word3.write();
-    }
-    else if (cont_correctAnswer == 4) {
-        word.word4.write();
-    }
-    else if (cont_correctAnswer == 5) {
-        word.word5.write();
-    }
-    else if (cont_correctAnswer == 6) {
-        word.word6.write();
-    }
-    else if (cont_correctAnswer == 7) {
-        word.word7.write();
-    }
-    else if (cont_correctAnswer == 8) {
-        word.word8.write();
-    }
-    else if (cont_correctAnswer == 9) {
-        word.word9.write();
-    }
-    else if (cont_correctAnswer == 10) {
-        word.word10.write();
-    }
-    else if (cont_correctAnswer == 11) {
-        word.word11.write();
-    }
-    else if (cont_correctAnswer == 12) {
-        word.word12.write();
-    }
-    else if (cont_correctAnswer == 13) {
-        word.word13.write();
-    }
-    else if (cont_correctAnswer == 14) {
-        word.word14.write();
-    }
-    else if (cont_correctAnswer == 15) {
-        word.word15.write();
-    }
-    else if (cont_correctAnswer == 16) {
-        word.word16.write();
+  const items = selected
+    .map((item, i) => [item, i])
+    .filter((item) => item[0] === playerLastMove)
+    .map((item) => item[1]);
 
-        setTimeout(function () {
-            destroyGrid();
-        }, 3000);
+  for (pos of positions) {
+    if (pos.every((item) => items.includes(item))) {
+      alert("O JOGADOR '" + playerLastMove + "' GANHOU!");
+      init();
+      return;
     }
+  }
 
-
+  if (selected.filter((item) => item).length === 9) {
+    alert("DEU EMPATE!");
+    init();
+    return;
+  }
 }
-
-
-function pontuation() {
-    div_information.style.display = 'block';
-
-    div_information.innerHTML = '<h1 style="text-align: center;">Parabéns!!</h1><br><br><p style="text-align: center;">Você finalizou o jogo</p><br><br>';
-}
-
-function renderGrid() {
-    var tableGame = '<table id="gridGame" cellspacing=0 cellpadding=0>';
-
-    // &nbsp its used to set null value to a cell
-    var cellContent_tableGame = '&nbsp';
-    var cell = 0;
-    for (var row = 1; row <= heightTable; row++) {
-
-        tableGame += `<tr id="row_${row}">`;
-
-        for (var column = 1; column <= widthTable; column++ , cell++) {
-            tableGame += `<td class="deadCell" id="cell_${cell}">` + cellContent_tableGame + '</td>';
-
-        }
-        tableGame += '</tr>';
-
-    }
-    tableGame += '</table>';
-
-    document.querySelector('#div_canvasCruzada').innerHTML = tableGame;
-
-    paintCells();
-}
-
-
-
-function paintCells() {
-    
-    for (item in filledCell) {
-        var paintCell = document.getElementById(`cell_${filledCell[item]}`);
-        paintCell.removeAttribute('deadCell');
-        paintCell.setAttribute('class', 'availableCell');
-    }
-    
-    for(var initial= 0; initial < firstIndex.length; initial++){
-        var paintIndex_cell = document.getElementById(`cell_${firstIndex[initial]}`);
-
-        paintIndex_cell.innerHTML= `<span style="color: red; font-size:10px">${initial + 1}</span>`;
-
-        if(initial== 2 ||initial== 3){
-        paintIndex_cell.innerHTML= `<span style="color: red; font-size:10px">3_4</span>`;
-        }
-    }    
-}
-
-function verify() {
-    var answer = input_answer.value;
-
-    if (answer != '') {
-        // answer = answer.toLowerCase();
-        if (answer == special_words[cont_correctAnswer]) {
-            div_verifiedAnswer.classList.add('correctAnswer');
-            div_verifiedAnswer.innerHTML = '<br>Resposta Correta!';
-            cont_correctAnswer++;
-        }
-        else {
-            div_verifiedAnswer.classList.add('wrongAnswer');
-            div_verifiedAnswer.innerHTML = '<br>Resposta Incorreta, tente novamente';
-        }
-        setTimeout(function () {
-            div_verifiedAnswer.style.display = 'block';
-        }, 500);
-
-        setTimeout(function () {
-            div_verifiedAnswer.style.display = 'none';
-        }, 3000);
-
-        input_answer.value = '';
-        gameSequence();
-    }
-    else {
-        alert('Por Favor, digite uma resposta na caixa de texto');
-    }
-}</script>
+</script>
 </body>
 
 </html>

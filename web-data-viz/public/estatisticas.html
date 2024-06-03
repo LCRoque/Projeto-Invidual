@@ -86,10 +86,12 @@ function exibirUsuarios() {
         <div id="grafico2">
             <div class="graph2">
                 <canvas id="myChartCanvas2"></canvas>
-                <div class="label-captura2">
-                <p id="avisoCaptura" style="color: black">Acompanhe a quantidade de publicações do nosso Fórum!</p>
             </div>
-            </div>
+        </div>
+        <div class="label-captura2">
+        <h1> Quer aparecer mais no Top?</h1>
+        <h3> Poste mais notícias e estára constantemente no topo! </h3>
+        <img src="css/imagens/cr7semfundo.png"
         </div>
     `;
 
@@ -131,9 +133,10 @@ function obterDadosGrafico() {
 }
 
 function plotarGrafico(resposta) {
+
     console.log('Iniciando plotagem do gráfico...');
 
-    let labels = ["Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+    let labels = ["Tamanho de nossa comunidade"];
 
     let dados = {
         labels: labels,
@@ -163,22 +166,35 @@ function plotarGrafico(resposta) {
 }
   
 function plotarGrafico2(resposta) {
-    let labels2 = ["Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+    let labels2 = [];
+    let dados2 = [];
 
-    let dados2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Notícias no Fórum',
-            data: [resposta[0].quantidade_noticias],
-            backgroundColor: 'rgb(0, 0, 0)',
-            borderColor: 'rgb(0, 0, 0)',
-            borderWidth: 1
-        }]
-    };
+    for (let i = 0; i < resposta.length; i++) {
+        if (i < 3) {
+            labels2.push(resposta[i].nome);
+            dados2.push(resposta[i].quantidade_posts);
+        }
+    }
 
     const config2 = {
         type: 'bar',
-        data: dados2,
+        data: {
+            labels: labels2,
+            datasets: [{
+                label: 'Top Postadores',
+                data: dados2,
+                backgroundColor: ['rgba(0, 0, 0)', 'rgba(0, 0, 0)', 'rgba(0, 0, 0)'],
+                borderColor: ['rgba(0, 0, 0)', 'rgba(0, 0, 0)', 'rgba(0, 0, 0)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
     };
 
     if (myChart2) {
@@ -209,23 +225,25 @@ function atualizarGrafico(dados, chartInstance) {
         console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
     });
 
-    fetch(`/medidas/tempo-realn/`, { cache: 'no-store' }).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (novoRegistro) {
-                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                dados.datasets[0].data[0] = novoRegistro[0].quantidade_noticias;
-                chartInstance.update();
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, chartInstance), 5000);
-            });
-        } else {
-            console.error('Nenhum dado encontrado ou erro na API');
-            proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, chartInstance), 5000);
-        }
-    })
-    .catch(function (error) {
-        console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
-        proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, chartInstance), 5000);
-    });
+    fetch(`/medidas/tempo-realn/`, { cache: 'no-store' })
+        .then(function (response) {
+            if (response.ok) {
+                response.json()
+                    .then(function (novoRegistro) {
+                        console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                        dados.datasets[0].data[0] = novoRegistro[0].quantidade_posts;
+                        chartInstance.update();
+                        proximaAtualizacao = setTimeout(() => atualizarGrafico(dados2, chartInstance), 5000);
+                    });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(dados2, chartInstance), 5000);
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+            proximaAtualizacao = setTimeout(() => atualizarGrafico(dados2, chartInstance), 5000);
+        });
 }
 </script>
 </body>

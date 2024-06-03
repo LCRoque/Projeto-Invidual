@@ -262,15 +262,32 @@ section{
 
 #graficos2 {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 50%;
   padding: 30px;
+  background-color: #000000;
+  border-radius: 20px;
+  color: #fff;
 }
 #grafico2 {
-  width: 100%;
+  width: 50%;
   height: 100%;
   display: block;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.label-captura2{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.label-captura2 img{
+  width: 50%;
+  height: 100%;
 }
 .graph2 {
   display: flex;
