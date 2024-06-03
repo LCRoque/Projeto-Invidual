@@ -19,10 +19,10 @@ router.post("/publicar/:idUsuario", function (req, res) {
     console.log("entrei na rota")
     avisoController.publicar(req, res);
 
-    const upload = require('../config/configimagem'); // ARQUIVO COM A CONFIGURAÇÃO DO UPLOAD
+const upload = require('../config/configimagem'); // ARQUIVO COM A CONFIGURAÇÃO DO UPLOAD
 
-    router.get("", (req, res) => {
-  res.render("indexdash")
+router.get("", (req, res) => {
+res.render("indexdash")
 });
 
 // upload.single('foto') vai buscar no json alguma propriedade chamada foto 
