@@ -11,6 +11,7 @@
     font-family: 'Poppins';
     text-decoration: none;
     list-style: none;
+    cursor: url("imagens/bolota.png");
 }
 body {
     background: #000;

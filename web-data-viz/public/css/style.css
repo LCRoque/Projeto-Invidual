@@ -11,6 +11,7 @@
     font-family: 'Poppins';
     text-decoration: none;
     list-style: none;
+    cursor: url("imagens/bolota.png");
 }
 body {
     background: #fff;
@@ -140,6 +141,7 @@ nav ul li a.ativo {
     flex-direction: column;
     background-image: url("imagens/teste.png");
     align-items: center;
+    background-repeat: no-repeat;
     justify-content: center;
     margin-top: 25px;
     width: 100%;
@@ -257,7 +259,7 @@ input:checked + label .description {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("imagens/fotoconquistas.png");
+    background-image: url("imagens/fundoconquistas.png");
     background-size: cover;
     justify-content: center;
     margin-top: 25px;

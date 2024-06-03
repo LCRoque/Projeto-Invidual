@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styledashboard.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" type="imagex/png" href="css/imagens/cr7logo.png">
+    <script src="../js/sessao.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body onload="atualizarFeed()">
@@ -46,7 +47,7 @@
 
       <li>
     <div class="profiledetalhes">
-      <i class='bx bx-log-out' ></i>  
+      <i class='bx bx-log-out' onclick="limparSessao()"></i>  
     </div>
   </li>
 </ul>
