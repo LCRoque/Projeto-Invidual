@@ -193,14 +193,15 @@ cursor: pointer;
   height: 100vh;
   display: grid;
   position: relative;
-  left: 5.5%;
+  left: 3%;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 45px;
   margin-top:20px;
+  overflow: auto;
 }
 .publicacao {
   width: 310px;
-  height: 455px;
+  height: 451px;
   display: flex;
   flex-direction: column;
   text-overflow: auto;
@@ -209,7 +210,7 @@ cursor: pointer;
   color: #fff;
   background-color: #000000;
   border-radius: 20px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .publicacao img {
