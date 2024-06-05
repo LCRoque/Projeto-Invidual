@@ -11,7 +11,6 @@
     font-family: 'Poppins';
     text-decoration: none;
     list-style: none;
-    cursor: url("imagens/bolota.png");
 }
 body {
     background: #fff;
@@ -190,14 +189,14 @@ nav ul li a.ativo {
     box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
 }
 
-.card > .row {
+.card  .row {
     color: white;
     background: #fff;
     display: flex;
     flex-wrap: nowrap;
 }
 
-.card > .row > .icon {
+.card  .row  .icon {
     background: rgb(0, 0, 0);
     color: white;
     border-radius: 50%;
@@ -208,7 +207,7 @@ nav ul li a.ativo {
     margin: 15px;
 }
 
-.card > .row > .description {
+.card  .row  .description {
     display: flex;
     background: #fff;
     color: black;
@@ -364,3 +363,71 @@ input:checked + label .description {
     color: white;
     cursor: default;
   }
+  
+
+  .headerfooter {
+    background: #ffffff;
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    padding: 10%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    border-radius: 10px 10px 0 0;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0;
+}
+
+.logofooter {
+    display: flex;
+    width: 120px;
+    margin-top: 8px;
+}
+
+.logofooter img {
+    width: 75%;
+}
+
+.headerfooter .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+nav .logo {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    color: black;
+    display: block;
+    margin: 0 2px;
+    font-weight: 600;
+    padding: 8px 18px;
+    transition: 0.2s;
+    border-radius: 30px;
+}
+nav ul li a:hover {
+    background: black;
+    color: #fff;
+}
+
+nav ul li a.ativo {
+    background: black;
+    color: #fff;
+}
+
+.containerfooter {
+    margin: 0 auto;
+    display: flex;
+    background-color: #ffffff;
+    flex-direction: column;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+}
