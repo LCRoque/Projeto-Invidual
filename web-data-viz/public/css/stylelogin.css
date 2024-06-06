@@ -198,3 +198,11 @@ nav ul li a.ativo {
     width: 100%;
     height: 90vh;
   }
+
+  #mensagem_erro{
+    color:white;
+  }
+
+  .card_erro{
+    background-color: white;
+  }

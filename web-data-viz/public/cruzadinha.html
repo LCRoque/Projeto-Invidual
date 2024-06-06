@@ -56,6 +56,27 @@ hr {
   font-size: 50px;
   background: #000000;
 }
+
+.game img{
+  width: 110px;
+  height: 110px;
+}
+
+.currentPlayer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.currentPlayer img{
+  width: 110px;
+  height: 110px;
+}
+
+#texto img{
+  width: 110px;
+  height: 110px;
+}
     </style>
 </head>
 <body>
@@ -119,7 +140,9 @@ hr {
                   <button data-i="9"></button>
                 </div>
                 <h2 class="currentPlayer"></h2>
+                <div id="texto"></div>
               </main>        
+              
              
  <script src="js/scriptmenudash.js"></script>
 
@@ -128,7 +151,7 @@ hr {
 const currentPlayer = document.querySelector(".currentPlayer");
 
 let selected;
-let player = "X";
+let player = `<img src="css/imagens/cr7jogo.png">`;
 
 let positions = [
   [1, 2, 3],
@@ -164,12 +187,12 @@ function newMove(e) {
     check();
   }, [100]);
 
-  player = player === "X" ? "O" : "X";
+  player = player === `<img src="css/imagens/cr7jogo.png">` ? `<img src="css/imagens/messo.png">` : `<img src="css/imagens/cr7jogo.png">`;
   currentPlayer.innerHTML = `JOGADOR DA VEZ: ${player}`;
 }
 
 function check() {
-  let playerLastMove = player === "X" ? "O" : "X";
+  let playerLastMove = player === `<img src="css/imagens/cr7jogo.png">` ? `<img src="css/imagens/messo.png">` : `<img src="css/imagens/cr7jogo.png">`;
 
   const items = selected
     .map((item, i) => [item, i])
@@ -178,14 +201,18 @@ function check() {
 
   for (pos of positions) {
     if (pos.every((item) => items.includes(item))) {
-      alert("O JOGADOR '" + playerLastMove + "' GANHOU!");
+      if(playerLastMove == `<img src="css/imagens/messo.png">`){
+        texto.innerHTML = "<b>O Messi " + playerLastMove + " Ganhou!</b>";
+      }else{
+      texto.innerHTML += "<b>O Cristiano Ronaldo " + playerLastMove + " Ganhou!</b>";
+      }
       init();
       return;
     }
   }
 
   if (selected.filter((item) => item).length === 9) {
-    alert("DEU EMPATE!");
+    texto.innerHTML = "DEU EMPATE!";
     init();
     return;
   }
