@@ -22,12 +22,12 @@
 }
 
 main {
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 h1 {
@@ -43,7 +43,7 @@ hr {
 .game {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 30px;
+  width: 600px;
   justify-content: center;
   align-items: center;
 }
@@ -76,6 +76,33 @@ hr {
 #texto img{
   width: 110px;
   height: 110px;
+}
+
+.card {
+  width: 70%;
+  height: 40%;  
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-size: 25px;
+  border: 4px solid #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  box-shadow: 4px 4px #000000;
+}
+
+.estatistica {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.pontmedia{
+  display: flex;
+  justify-content: space-between;
 }
     </style>
 </head>
@@ -123,10 +150,9 @@ hr {
 <section class="home">
         <div class="home-content">
             <i class='bx bx-menu'></i>
-            <span class="text">Entretenimento</span>
+            <span class="text">Jogo da Velha</span>
             </div>
             <main>
-                <h1>JOGO DA VELHA</h1>
                 <hr />
                 <div class="game">
                   <button data-i="1"></button>
@@ -139,8 +165,18 @@ hr {
                   <button data-i="8"></button>
                   <button data-i="9"></button>
                 </div>
+                <div class="estatistica">
+                <div class="card">
+                  <P>Cristiano Ronaldo: <div id="texto2"></div></P>
+                  <P>Messi: <div id="texto1"></div></P>
+                  <div class="pontmedia">
+                    <p>Win Rate CR7: <div id="mediacr7"></div>%</p>
+                    <p>Win Rate Messo: <div id="mediamesso"></div>%</p>
+                  </div>
+              </div>
                 <h2 class="currentPlayer"></h2>
                 <div id="texto"></div>
+              </div>
               </main>        
               
              
@@ -163,6 +199,11 @@ let positions = [
   [1, 5, 9],
   [3, 5, 7],
 ];
+var pontuacao1 = 0;
+var pontuacao2 = 0;
+var partida = 0;
+var soma1 = 0;
+var soma2 = 0;
 
 function init() {
   selected = [];
@@ -201,18 +242,31 @@ function check() {
 
   for (pos of positions) {
     if (pos.every((item) => items.includes(item))) {
+
       if(playerLastMove == `<img src="css/imagens/messo.png">`){
         texto.innerHTML = "<b>O Messi " + playerLastMove + " Ganhou!</b>";
+        pontuacao2++
+        partida++
+        var mediamessi = pontuacao2 / partida;
+        texto1.innerHTML = pontuacao2;
+        mediamesso.innerHTML = (mediamessi.toFixed(2)) * 100;
       }else{
-      texto.innerHTML += "<b>O Cristiano Ronaldo " + playerLastMove + " Ganhou!</b>";
+      texto.innerHTML = "<b>O Cristiano Ronaldo " + playerLastMove + " Ganhou!</b>";
+      pontuacao1++  
+      partida++
+      var mediascr7 = pontuacao1 / partida;
+      texto2.innerHTML = pontuacao1;
+      mediacr7.innerHTML = (mediascr7.toFixed(2)) * 100;
       }
       init();
       return;
+    
     }
   }
 
   if (selected.filter((item) => item).length === 9) {
     texto.innerHTML = "DEU EMPATE!";
+    partida++
     init();
     return;
   }
