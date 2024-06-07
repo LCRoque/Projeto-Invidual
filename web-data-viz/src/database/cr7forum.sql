@@ -5,7 +5,8 @@ create table usuario (
 	id int primary key auto_increment,
     nome varchar(45),
     email varchar(45),
-    senha varchar(45)
+    senha varchar(45),
+    dtCad timestamp default current_timestamp
 );
 
 create table noticias (
@@ -17,9 +18,12 @@ create table noticias (
     foreign key (fk_usuario) references usuario(id)
 );
 
+
 select * from usuario;	
 select * from noticias;
 
 SELECT COUNT(*) AS quantidade_usuarios FROM usuario;
 
 SELECT COUNT(*) AS quantidade_noticias FROM noticias;
+
+truncate noticias;

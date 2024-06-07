@@ -136,13 +136,14 @@ function plotarGrafico(resposta) {
 
     console.log('Iniciando plotagem do gráfico...');
 
-    let labels = ["Tamanho de nossa comunidade"];
+    let labels = resposta.map(item => item.mes);
+    let dados = resposta.map(item => item.quantidade_usuarios);
 
-    let dados = {
+    let data = {
         labels: labels,
         datasets: [{
-            label: 'Total de Pessoas no Fórum',
-            data: [resposta[0].quantidade_usuarios],
+            label: 'Total de Usuários por Mês',
+            data: dados,
             backgroundColor: 'rgb(0, 0, 0)',
             borderColor: 'rgb(0, 0, 0)',
             borderWidth: 1
@@ -151,7 +152,14 @@ function plotarGrafico(resposta) {
 
     const config = {
         type: 'bar',
-        data: dados,
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
     };
 
     if (myChart) {
@@ -162,6 +170,7 @@ function plotarGrafico(resposta) {
         document.getElementById('myChartCanvas'),
         config
     );
+
 }
   
 function plotarGrafico2(resposta) {

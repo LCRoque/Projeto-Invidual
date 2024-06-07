@@ -19,9 +19,10 @@ function buscarUltimasMedidas(req, res) {
 }
 
 function buscarMedidasEmTempoReal(req, res) {
-    console.log("Recuperando medidas em tempo real");
 
-    medidaModel.buscarMedidasEmTempoReal()
+    console.log(`Recuperando as últimas ${limite_linhas} medidas`);
+
+    medidaModel.buscarMedidasEmTempoReal(limite_linhas)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
